@@ -1,5 +1,14 @@
 const url = 'https://jsonplaceholder.typicode.com/users';
 
+var input = document.getElementById("buscar");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    buscar()
+  }
+});
+
+
 function buscar() {
     console.log('buscando...')
     const valor = document.getElementById("buscar").value;
@@ -40,21 +49,16 @@ function mostrar(usuario) {
     console.log(email)
     console.log(telefono)
     //pintando
-    const aplicacion = document.querySelector('.container');
+    const aplicacion = document.querySelector('.content');
+    const par = document.getElementsByTagName('p')
     const pintarNombre = document.createElement('p')
-    pintarNombre.innerHTML = '<b>Nombre:</b> '+nombre;
+
+    pintarNombre.innerHTML = 
+        '<b>Nombre:</b> '+nombre+ '<br>' +
+        '<b>Nombre de usuario:</b> ' + nombreDeUsuario + '<br>' +
+        '<b>Correo electronico:</b> ' + email + '<br>' +
+        '<b>Telefono:</b> ' + telefono + '<hr>';
+
     aplicacion.appendChild(pintarNombre)
-
-    const pintarNombreDeUsuario = document.createElement('p')
-    pintarNombreDeUsuario.innerHTML = '<b>Nombre de usuario:</b> ' + nombreDeUsuario;
-    aplicacion.appendChild(pintarNombreDeUsuario)
-
-    const pintarEmail = document.createElement('p')
-    pintarEmail.innerHTML = '<b>Correo electronico:</b> ' + email;
-    aplicacion.appendChild(pintarEmail)
-
-    const pintarTelefono = document.createElement('p')
-    pintarTelefono.innerHTML = '<b>Telefono:</b> ' + telefono;
-    aplicacion.appendChild(pintarTelefono)
 
 }

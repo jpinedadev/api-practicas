@@ -7,15 +7,20 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div class="header">
-            <h1>BUSCAR USUARIO</h1>
-            <input type="search" name="buscar" id="buscar">
-            <button type="submit" onclick="buscar()">Buscar</button>
-        </div>
 
         <div class="container">
-            
+            <div class="header">
+                <input type="search" name="buscar" id="buscar" placeholder="Search">
+
+                <br>
+                <button type="submit" onclick="buscar()" class="css-button-gradient--9">Search</button>               
+            </div>
+
+            <div class="content">
+                <h2>Suggestions</h2>
+            </div>           
         </div>
+
     </body>
-    <script src="app.js"></script>
+   <script src="app.js"></script>
 </html>
