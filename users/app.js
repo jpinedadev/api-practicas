@@ -53,11 +53,17 @@ function mostrar(usuario) {
     const par = document.getElementsByTagName('p')
     const pintarNombre = document.createElement('p')
 
-    pintarNombre.innerHTML = 
+    pintarNombre.innerHTML = '<hr>' +
+        '<b>ID:</b>'+usuario.id+'<br>'+
         '<b>Nombre:</b> '+nombre+ '<br>' +
         '<b>Nombre de usuario:</b> ' + nombreDeUsuario + '<br>' +
         '<b>Correo electronico:</b> ' + email + '<br>' +
-        '<b>Telefono:</b> ' + telefono + '<hr>';
+        '<b>Direccion:</b> '+usuario.address.street+ ', '
+                            +usuario.address.suite+' - '
+                            +usuario.address.city+'<br>'+ 
+        '<b>Telefono:</b> ' + telefono + '<br>'+
+        '<b>Sitio Web: </b>'+usuario.website+'<br>'+
+        '<b>Compañía: </b>'+usuario.company.name+'<hr>';
 
     aplicacion.appendChild(pintarNombre)
 
